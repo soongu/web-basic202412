@@ -45,7 +45,6 @@ public class AddNewDancerServlet extends HttpServlet {
 
         req.setAttribute("dancer", dancer);
 
-
         // 응답 html 생성 처리 - jsp 포워딩
         RequestDispatcher dispatcher
                 = req.getRequestDispatcher("/WEB-INF/chap04/dancer/result.jsp");
