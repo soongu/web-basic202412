@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%@ page import="java.util.*" %>
-<%@ page import="com.jsp.basic.chap02.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -29,19 +27,15 @@
 <body>
   <h1>MVC 댄서 정보 목록</h1>
   <ul id="dancer-list">
-    <%
-      List<Dancer> dancerList 
-        = (List<Dancer>) request.getAttribute("dancers");
-
-      for (Dancer d : dancerList) {
-    %>
+    <!-- for (Dancer d : dancers) -->
+    <c:forEach var="d" items="${dancers}">
       <li>
-        # 이름: <span class="dancer-name"><%= d.getName() %></span>,
-        # 크루명: <%= d.getCrewName() %>,
-        # 수준: <%= d.getDanceLevel() %>
+        # 이름: <span class="dancer-name">${d.name}</span>,
+        # 크루명: ${d.crewName},
+        # 수준: ${d.danceLevel}
         <button class="del-btn">삭제</button>
       </li>
-    <% } %>
+    </c:forEach>
   </ul>
 
   <a href="/mvc/v1/register">다시 등록하기</a>
