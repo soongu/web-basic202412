@@ -38,7 +38,15 @@ public class AddNewDancerServlet extends HttpServlet {
 
         DancerList.addDancer(dancer);
 
-        // 응답 html 생성 처리
+        // 서블릿이 jsp가 화면을 그릴 때 필요한 데이터를 전달해줘야 함
+//        req.setAttribute("name", name);
+//        req.setAttribute("crew", crewName);
+//        req.setAttribute("level", danceLevel);
+
+        req.setAttribute("dancer", dancer);
+
+
+        // 응답 html 생성 처리 - jsp 포워딩
         RequestDispatcher dispatcher
                 = req.getRequestDispatcher("/WEB-INF/chap04/dancer/result.jsp");
         dispatcher.forward(req, resp);
