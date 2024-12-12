@@ -15,6 +15,9 @@
     <li>
       <a href="/chap03/dancer/register.jsp">댄서 등록하기(jsp버전)</a>
     </li>
+    <li>
+      <a href="/mvc/v1/register">댄서 등록하기(MVC-V1)</a>
+    </li>
   </ul>
 </body>
 </html>
